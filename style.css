@@ -1,0 +1,586 @@
+/* --- Global Styles & Resets --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables for Theme */
+:root { /* Default Light Theme Variables */
+    --background-color-primary: #f4f7f6;
+    --background-color-secondary: #ffffff;
+    --background-color-accent: #e0e7f7;
+
+    --text-color-primary: #333;
+    --text-color-secondary: #555;
+    --text-color-heading: #2c3e50;
+
+    --accent-color: #007bff; /* Blue */
+    --accent-color-hover: #0056b3; /* Darker blue */
+    --border-color: #eee;
+    --shadow-color: rgba(0,0,0,0.1);
+
+    /* Smooth transition for theme change on all affected properties */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme { /* Dark Theme Variables */
+    --background-color-primary: #1a1a2e; /* Dark blue/purple */
+    --background-color-secondary: #202040; /* Slightly lighter dark */
+    --background-color-accent: #2e3b55; /* Mid-dark accent */
+
+    --text-color-primary: #f0f0f0; /* Light gray */
+    --text-color-secondary: #c0c0c0; /* Muted light gray */
+    --text-color-heading: #e0e0e0; /* Off-white */
+
+    --accent-color: #8b5cf6; /* Purple-ish accent */
+    --accent-color-hover: #7c3aed; /* Darker purple */
+    --border-color: #3a3a5a;
+    --shadow-color: rgba(0,0,0,0.3);
+}
+
+/* Apply variables throughout your CSS */
+body {
+    line-height: 1.6;
+    background-color: var(--background-color-primary);
+    color: var(--text-color-primary);
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Common Section Heading Style */
+.section-heading {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--text-color-heading);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+
+/* --- Navbar Styling --- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--background-color-secondary);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--navbar-height, 80px);
+}
+
+#navbar .nav-links li a.active {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+#navbar .nav-links li a.active {
+  position: relative;
+}
+
+#navbar .nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-color-heading);
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Navigation links container */
+#navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display horizontally by default */
+}
+
+#navbar .nav-links li {
+    margin-left: 2rem;
+}
+
+#navbar .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#navbar .nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation Controls Wrapper (for theme toggle and hamburger) */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Theme toggle button specific styles */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-primary);
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.5rem;
+}
+
+#theme-toggle:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Hide/show sun/moon icons based on theme */
+#theme-toggle .fas.fa-moon {
+    display: inline-block; /* Moon visible by default (light mode) */
+}
+#theme-toggle .fas.fa-sun {
+    display: none; /* Sun hidden by default */
+}
+
+body.dark-theme #theme-toggle .fas.fa-moon {
+    display: none; /* Hide moon when dark theme is active */
+}
+body.dark-theme #theme-toggle .fas.fa-sun {
+    display: inline-block; /* Show sun when dark theme is active */
+    color: #f39c12; /* Sun icon color (can be a fixed color regardless of theme) */
+}
+
+
+/* Hamburger menu button (hidden by default on large screens) */
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--text-color-primary);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+
+/* --- Home Section --- */
+#home {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-accent);
+    padding: 4rem 0;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.home-content .pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--background-color-secondary);
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text h2 {
+    font-size: 3.5rem;
+    color: var(--text-color-heading);
+    margin-bottom: 0.5rem;
+}
+
+.home-text h3 {
+    font-size: 1.8rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* --- About Section --- */
+#about {
+    padding: 6rem 0;
+    background-color: var(--background-color-secondary);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--text-color-primary); /* Ensure all content respects theme */
+}
+
+#about img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    color: var(--text-color-heading);
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-color-secondary);
+    line-height: 1.7;
+}
+
+/* --- Portfolio Section --- */
+#portfolio {
+  padding: 6rem 0;
+  background-color: var(--background-color-accent);
+}
+
+.category-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+}
+
+.gallery .item {
+  background-color: var(--background-color-secondary);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.gallery .item h4 {
+  font-size: 1.4rem;
+  color: var(--text-color-heading);
+  margin-bottom: 1rem;
+}
+
+.gallery .item p {
+  font-size: 0.95rem;
+  color: var(--text-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.gallery .item img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.gallery .item a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.gallery .item a:hover {
+  color: var(--accent-color-hover);
+}
+
+/* Theme-adaptive logos */
+.gallery .item img.github-logo {
+  content: url("Pics/Github\ Black.png");
+}
+body.dark-theme .gallery .item img.github-logo {
+  content: url("Pics/Github\ White.png");
+}
+
+/* --- Contact Section --- */
+#contact {
+    padding: 6rem 0;
+    background-color: var(--background-color-primary);
+    text-align: center;
+    color: var(--text-color-primary); /* Ensure all content respects theme */
+}
+
+#contact h3 {
+    font-size: 1.8rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.social-icons a {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color-hover);
+    transform: translateY(-5px);
+}
+
+
+/* --- Footer Styling --- */
+.site-footer {
+  background-color: #2c3e50; /* fixed dark background */
+  color: #f0f0f0;            /* fixed light text */
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  display: none; /* hidden by default */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: var(--accent-color-hover);
+  transform: scale(1.1); /* subtle bounce */
+}
+
+#back-to-top i {
+  pointer-events: none; /* ensures click works anywhere on button */
+}
+/* --- Media Queries for Responsiveness --- */
+
+/* Tablet styles (max-width: 800px) */
+@media screen and (max-width: 800px) {
+    .container-fluid {
+        padding: 0 10px;
+    }
+
+    /* Navbar adjustments */
+    #navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    #navbar .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Hide nav links by default, show toggle button */
+    #navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--background-color-secondary);
+        position: absolute;
+        top: var(--navbar-height, 80px);
+        left: 0;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        padding: 1rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    #navbar .nav-links.active {
+        display: flex;
+    }
+
+    #navbar .nav-links li {
+        margin: 0;
+        text-align: center;
+    }
+
+    #navbar .nav-links li a {
+        display: block;
+        padding: 10px 0;
+        color: var(--text-color-primary);
+    }
+
+    /* Show hamburger toggle and theme toggle */
+    .nav-toggle {
+        display: block;
+        color: var(--text-color-primary);
+    }
+    #theme-toggle {
+        display: block;
+    }
+
+    /* Section headings */
+    .section-heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Home and About content layout */
+    .home-content,
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* Portfolio gallery */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Social icons */
+    .social-icons {
+        gap: 1.5rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+}
+
+/* Phone styles (max-width: 530px) */
+@media screen and (max-width: 530px) {
+    #navbar {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home-content .pic,
+    #about img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .home-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        padding: 0 1rem;
+    }
+
+    .gallery .item h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+}

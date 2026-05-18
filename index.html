@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <meta name="description" content="My official portfolio showcasing interests in cybersecurity (pentesting) and skills in web technologies like HTML, CSS, JavaScript, Java, and Linux.">
+    <meta name="author" content="Raimon">
+
+    <link rel="icon" href="user-secret-solid.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="container-fluid">
+        <nav id="navbar">
+            <h1 class="logo">PORTFO<span>LIO</span></h1>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle dark and light mode">
+                    <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button>
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-fluid">
+        <section id="home" class="hero-section">
+            <div class="home-content">
+                <img src="Pics/Whoami.png" class="pic" alt="A picture of me, the author of this portfolio">
+                <div class="home-text">
+                    <h2>Hey there, you found me!</h2>
+                    <h3>Glad to see you here</h3>
+                    <!-- <a href="https://drive.google.com/file/d/1BOqdiYV3eulouTL4LWc0PDp5UO86ASwD/view?usp=sharing" target="_blank" class="btn btn-outline-dark">Download CV</a> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-heading">About me</h2>
+            <div class="about-content">
+                <img src="Pics/Iamwho.png" alt="It's me, again">
+                <div class="about-text">
+                    <h3>Goal</h3>
+                    <p>I dream of becoming a pentester. Why? Because I chose this field out of genuine passion—I love it and truly enjoy the journey. Although it's a long road, I believe there are no shortcuts to being unique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-heading">Portfolio</h2>
+
+            <!-- Certificates Section -->
+            <h3 class="category-heading">Certificates</h3>
+            <div class="gallery">
+                <div class="item">
+                    <img src="Pics/certificate.png" alt="Certificate icon" class="cert-logo">
+                    <h4>Python Fundamentals</h4>
+                    <p>Completed an introductory course covering variables, loops, and functions.</p>
+                    <a href="certificates/python-fundamentals.pdf" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Web Development Category -->
+            <h3 class="category-heading">Web Development</h3>
+            <div class="gallery">
+                <div class="item">
+                    <img src="Pics/Html.png" alt="HTML logo" class="html-logo">
+                    <h4>HTML</h4>
+                    <p>Learned how to structure web pages with semantic tags and improve accessibility.</p>
+                    <a href="https://github.com/yourusername/html-project" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/CSS.png" alt="CSS logo" class="css-logo">
+                    <h4>CSS</h4>
+                    <p>Practiced responsive layouts, theme toggling, and modular design with variables.</p>
+                    <a href="https://github.com/yourusername/css-project" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/JS.png" alt="JavaScript logo" class="js-logo">
+                    <h4>JavaScript</h4>
+                    <p>Practiced the basics of JavaScript, including variables, functions, and simple DOM interactions.</p>
+                    <a href="https://github.com/yourusername/js-project" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Category -->
+            <h3 class="category-heading">Cybersecurity</h3>
+            <div class="gallery">
+                <div class="item">
+                    <img src="Pics/Kali.png" alt="Kali Linux logo" class="kali-logo">
+                    <h4>Kali Linux</h4>
+                    <p>Explored basic penetration testing workflows using Kali Linux tools like Nmap and Burp Suite in lab setups. Currently learning how to navigate the environment and run simple scans.</p>
+                    <a href="projects/kali-notes.html" target="_blank" rel="noopener noreferrer">Read Notes</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Burpsuite.png" alt="Burp Suite logo" class="burp-logo">
+                    <h4>Burp Suite</h4>
+                    <p>Practiced intercepting and analyzing HTTP requests to understand how web applications communicate. Still learning how to identify and test for common vulnerabilities.</p>
+                    <a href="projects/burp-demo.html" target="_blank" rel="noopener noreferrer">View Demo</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Nmap.png" alt="Nmap logo" class="nmap-logo">
+                    <h4>Nmap</h4>
+                    <p>Used Nmap to perform basic network scans and service enumeration. Building foundational knowledge of ports, protocols, and scan types.</p>
+                    <a href="projects/nmap-lab.html" target="_blank" rel="noopener noreferrer">View Lab</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/linux.png" alt="Linux CLI logo" class="linux-logo">
+                    <h4>Linux Command Line</h4>
+                    <p>Practiced essential Bash commands for navigation, file permissions, and scripting. Learning how to automate simple tasks and support pentesting workflows</p>
+                    <a href="projects/linux-cli.html" target="_blank" rel="noopener noreferrer">Read Notes</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Metasploit.png" alt="Metasploit logo" class="metasploit-logo">
+                    <h4>Metasploit</h4>
+                    <p>Explored Metasploit modules in a controlled lab to understand basic exploitation concepts. Currently learning how payloads and vulnerabilities are linked.</p>
+                    <a href="projects/metasploit-lab.html" target="_blank" rel="noopener noreferrer">View Lab</a>
+                </div>
+                
+                <div class="item">
+                    <img src="Pics/Networking.png" alt="Networking icon" class="network-logo">
+                    <h4>Networking</h4>
+                    <p>Studied core concepts like TCP/IP, DNS, and HTTP/HTTPS. Practiced packet analysis with Wireshark to understand traffic flow and support reconnaissance</p>
+                    <a href="projects/network-notes.html" target="_blank" rel="noopener noreferrer">Read Notes</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Python.png" alt="Python logo" class="python-logo">
+                    <h4>Python</h4>
+                    <p>Practiced writing basic Python scripts to automate reconnaissance and analyze web traffic.</p>
+                    <a href="projects/python-notes.html" target="_blank" rel="noopener noreferrer">Read Notes</a>
+                </div>
+
+            </div>
+
+            <!-- Tools & DevOps Category -->
+            <h3 class="category-heading">Tools & DevOps</h3>
+            <div class="gallery">
+                <div class="item">
+                    <img src="Pics/Docker.png" alt="Docker logo" class="docker-logo">
+                    <h4>Docker</h4>
+                    <p>Built and ran containers, managed images, and deployed apps in isolated environments.</p>
+                    <a href="https://github.com/yourusername/docker-project" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Github White.png" alt="GitHub logo" class="github-logo">
+                    <h4>GitHub</h4>
+                    <p>Practiced basic version control using GitHub — learned how to commit changes, manage branches, and collaborate on small projects.</p>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">My GitHub</a>
+                </div>
+
+                <div class="item">
+                    <img src="Pics/Git.png" alt="Git Bash logo" class="gitbash-logo">
+                    <h4>Git Bash</h4>
+                    <p>Used Git Bash to run simple Git commands and navigate files with Unix-style syntax on Windows.</p>
+                    <a href="projects/gitbash-notes.html" target="_blank" rel="noopener noreferrer">Read Notes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-heading">Contact</h2>
+            <div class="social-icons">
+                <a href="Tel:+85592556451" target="_blank" title="My official Number"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://t.me/Knak515" target="_blank" title="My official Telegram profile."><i class="fab fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/vong-vannak-515467269/" target="_blank" title="My official LinkedIn profile."><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Raimon. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
